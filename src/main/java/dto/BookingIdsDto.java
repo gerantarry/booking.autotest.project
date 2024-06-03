@@ -4,5 +4,5 @@ import lombok.Data;
 
 @Data
 public class BookingIdsDto {
-    private int bookingId;
+    private int bookingid;
 }

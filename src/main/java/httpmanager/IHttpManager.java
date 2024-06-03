@@ -12,5 +12,7 @@ public interface IHttpManager {
 
     Response put(String uri);
 
+    Response patch(String uri, Object partialBody);
+
 
 }

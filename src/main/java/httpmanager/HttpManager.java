@@ -4,7 +4,6 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -39,12 +38,11 @@ public class HttpManager implements IHttpManager {
                 .thenReturn();
     }
 
-    //TODO rework POST, DELETE, PUT + Add PATCH
     @Override
-    public Response post(final String uri, Object body) {
+    public Response post(final String uri, final Object body) {
         return given()
-                .body(body).
-                when()
+                .body(body)
+                .when()
                 .post(uri)
                 .thenReturn();
     }
@@ -60,6 +58,15 @@ public class HttpManager implements IHttpManager {
     public Response put(final String uri) {
         return when()
                 .put(uri)
+                .thenReturn();
+    }
+
+    @Override
+    public Response patch(final String uri, Object partialBody) {
+        return given()
+                .body(partialBody)
+                .when()
+                .post(uri)
                 .thenReturn();
     }
 }
