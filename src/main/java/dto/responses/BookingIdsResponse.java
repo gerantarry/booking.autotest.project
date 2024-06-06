@@ -1,8 +1,8 @@
-package dto;
+package dto.responses;
 
 import lombok.Data;
 
 @Data
-public class BookingIdsDto {
+public class BookingIdsResponse {
     private int bookingid;
 }

@@ -19,4 +19,8 @@ public class ResponseUtils {
         return gson.fromJson(response.getBody().asString(), listType);
     }
 
+    public static String extractValueFromBodyAsString(Response response, String jsonPath){
+       return response.then().extract().body().jsonPath().getString(jsonPath);
+    }
+
 }

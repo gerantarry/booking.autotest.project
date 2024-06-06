@@ -15,6 +15,7 @@
         <selenium.version>4.20.0</selenium.version>
         <lombok.version>1.18.30</lombok.version>
         <gson.version>2.11.0</gson.version>
+        <javafaker.version>1.0.2</javafaker.version>
 
         <host.test>https://restful-booker.herokuapp.com</host.test>
     </properties>
@@ -33,6 +34,12 @@
             <id>test</id>
             <properties>
                 <host.test>https://restful-booker.herokuapp.com</host.test>
+            </properties>
+        </profile>
+        <profile>
+            <id>local_test</id>
+            <properties>
+                <host.test>http://localhost:3001</host.test>
             </properties>
         </profile>
     </profiles>
@@ -90,6 +97,11 @@
             <artifactId>gson</artifactId>
             <version>${gson.version}</version>
         </dependency>
-
+        <!-- JavaFaker for random data generation-->
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>${javafaker.version}</version>
+        </dependency>
     </dependencies>
 </project>

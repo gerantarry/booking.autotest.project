@@ -8,7 +8,7 @@ public interface IHttpManager {
 
     Response post(String uri, Object body);
 
-    Response delete(String uri);
+    Response delete(String uri, Object paramValue);
 
     Response put(String uri);
 
